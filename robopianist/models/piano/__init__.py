@@ -13,7 +13,9 @@
 # limitations under the License.
 
 from robopianist.models.piano.piano import Piano
+from robopianist.models.piano import piano_usd
 
 __all__ = [
     "Piano",
+    "piano_usd",
 ]

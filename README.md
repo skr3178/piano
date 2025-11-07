@@ -154,3 +154,66 @@ We would like to thank the following people for making this project possible:
 [MuJoco Menagerie](https://github.com/deepmind/mujoco_menagerie)'s license can be found [here](https://github.com/deepmind/mujoco_menagerie/blob/main/LICENSE). Soundfont licensing information can be found [here](docs/soundfonts.md). MIDI licensing information can be found [here](docs/dataset.md). All other code is licensed under an [Apache-2.0 License](LICENSE).
 
 This is not an officially supported Google product.
+
+
+## For running and training this dataset the following resources were used:
+
+Algorithm and Framework
+
+RL Algorithm: DroQ — Dropout Q-functions for doubly efficient reinforcement learning
+→ a regularized variant of Soft Actor-Critic (SAC)
+
+Implementation framework: JAX (from Google)
+
+ROBOPIANIST
+Physics simulation: MuJoCo (versions cited from Todorov et al. 2012 and dm_control 2020)
+Environment source: MuJoCo Menagerie (for Shadow Dexterous Hand models)
+Observation frequency: 20 Hz control, 500 Hz physics update
+Observation space: proprioception + future goal states (lookahead horizon 
+𝐿
+L)
+Action space: 45D (joint angles + sustain pedal)
+Reward terms:
+
+Key press accuracy
+Finger proximity to target keys
+Energy minimization penalty
+
+⚙️ Training Infrastructure
+Hardware: Google Cloud n1-highmem-64
+Intel Xeon E5-2696 v3 CPU (32 cores @ 2.3 GHz)
+416 GB RAM
+4 × Tesla K80 GPUs
+Parallelization: up to 8 simultaneous runs
+Typical run time: ≈ 5 hours per song (5 million steps per run)
+Optimizer: Adam (lr = 3 × 10⁻⁴, β₁ = 0.9, β₂ = 0.999)
+
+Network:
+
+Actor & Critic = 3-layer MLPs (256 neurons, ReLU, dropout 0.01, layer norm)
+
+Xavier weight initialization
+
+Diagonal Gaussian actor (tanh-squashed)
+
+🎹 Environment Details
+
+Robot Hands: Two anthropomorphic Shadow Dexterous Hands, 44 DOF total
+
+Instrument: Full 88-key digital piano modeled with linear-spring keys
+
+Dataset: ROBOPIANIST-REPERTOIRE-150, based on annotated MIDI + fingering data from the PIG dataset
+
+Evaluation metric: F1 score (precision × recall of correct key activations)
+
+🧩 Baselines Used
+
+Model-based baseline: MPC (Predictive Sampling) implemented in C++/MJPC
+
+Evaluated on a MacBook Pro M1 Max (64 GB RAM)
+
+0.2 s planning horizon, 0.01 s step, 0.005 s physics step
+
+✅ In summary:
+ROBOPIANIST was trained in MuJoCo using JAX-based DroQ (a SAC variant) on a Google Cloud high-memory 64-core CPU + 4 K80 GPU machine.
+Simulation and environment were built from MuJoCo Menagerie’s Shadow Hand and a custom full-piano model, with training guided by human fingering priors and MIDI-based reward shaping.
