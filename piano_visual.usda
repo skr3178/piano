@@ -1,0 +1,2326 @@
+#usda 1.0
+(
+    defaultPrim = "Piano"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "Piano" (
+    customData = {
+        dictionary mujoco = {
+            string description = "Visual USD representation. Physics in XML file."
+            string xmlFile = "/home/skr/Downloads/piano/piano.xml"
+        }
+    }
+    doc = "This USD file provides visual geometry for rendering. Physics simulation should use the MuJoCo XML file: piano.xml"
+)
+{
+    def Xform "Base"
+    {
+        double3 xformOp:translate = (-0.127, 0, 0.02)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "BaseMesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.05, -0.6105, -0.02), (0.05, -0.6105, -0.02), (-0.05, 0.6105, -0.02), (0.05, 0.6105, -0.02), (-0.05, -0.6105, 0.02), (0.05, -0.6105, 0.02), (-0.05, 0.6105, 0.02), (0.05, 0.6105, 0.02)]
+            color3f[] primvars:displayColor = [(0.15, 0.15, 0.15)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_0" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_0"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.59925, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_2" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_2"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.57575, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_3" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_3"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.5522499999999999, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_5" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_5"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.5287499999999999, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_7" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_7"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.50525, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_8" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_8"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.48174999999999996, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_10" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_10"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.45824999999999994, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_12" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_12"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.43474999999999997, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_14" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_14"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.41124999999999995, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_15" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_15"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.38774999999999993, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_17" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_17"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.36424999999999996, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_19" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_19"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.34074999999999994, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_20" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_20"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.3172499999999999, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_22" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_22"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.29374999999999996, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_24" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_24"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.27024999999999993, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_26" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_26"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.24674999999999997, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_27" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_27"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.22324999999999995, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_29" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_29"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.19974999999999993, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_31" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_31"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.17624999999999996, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_32" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_32"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.15274999999999994, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_34" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_34"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.12924999999999998, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_36" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_36"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.10574999999999996, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_38" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_38"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.08224999999999993, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_39" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_39"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.05874999999999997, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_41" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_41"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.03524999999999989, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_43" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_43"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, -0.011749999999999927, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_44" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_44"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.011750000000000038, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_46" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_46"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.035250000000000004, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_48" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_48"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.05875000000000008, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_50" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_50"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.08225000000000005, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_51" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_51"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.10575000000000001, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_53" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_53"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.1292500000000001, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_55" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_55"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.15275000000000005, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_56" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_56"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.17625000000000002, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_58" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_58"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.1997500000000001, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_60" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_60"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.22325000000000006, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_62" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_62"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.24675000000000002, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_63" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_63"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.2702500000000001, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_65" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_65"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.29375000000000007, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_67" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_67"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.31725000000000003, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_68" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_68"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.34075, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_70" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_70"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.3642500000000001, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_72" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_72"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.38775000000000004, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_74" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_74"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.41125, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_75" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_75"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.4347500000000001, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_77" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_77"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.45825000000000016, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_79" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_79"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.48175, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_80" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_80"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.5052500000000001, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_82" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_82"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.5287500000000002, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_84" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_84"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.55225, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_86" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_86"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.5757500000000001, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "white_key_87" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "white_key_87"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (0, 0.59925, 0.01125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_1" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_1"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, -0.5875, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_4" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_4"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, -0.5399999999999999, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_6" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_6"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, -0.5164999999999998, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_16" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_16"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, -0.37549999999999994, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_18" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_18"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, -0.35199999999999987, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_28" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_28"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, -0.21099999999999997, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_30" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_30"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, -0.1874999999999999, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_40" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_40"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, -0.046499999999999986, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_42" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_42"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, -0.02299999999999991, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_52" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_52"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, 0.118, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_54" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_54"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, 0.14150000000000007, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_64" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_64"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, 0.2825000000000001, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_66" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_66"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, 0.30600000000000016, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_76" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_76"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, 0.44700000000000006, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_78" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_78"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, 0.47050000000000014, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_9" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_9"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, -0.4695, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_11" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_11"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, -0.4459999999999999, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_13" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_13"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, -0.42249999999999993, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_21" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_21"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, -0.30499999999999994, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_23" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_23"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, -0.28149999999999986, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_25" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_25"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, -0.2579999999999999, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_33" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_33"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, -0.14049999999999996, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_35" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_35"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, -0.11699999999999988, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_37" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_37"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, -0.09349999999999992, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_45" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_45"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, 0.02400000000000002, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_47" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_47"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, 0.0475000000000001, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_49" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_49"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, 0.07100000000000006, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_57" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_57"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, 0.1885, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_59" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_59"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, 0.21200000000000008, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_61" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_61"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, 0.23550000000000004, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_69" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_69"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, 0.353, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_71" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_71"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, 0.37650000000000006, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_73" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_73"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, 0.4, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_81" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_81"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, 0.5175000000000001, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_83" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_83"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, 0.5410000000000001, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "black_key_85" (
+        customData = {
+            dictionary mujoco = {
+                string bodyName = "black_key_85"
+            }
+        }
+    )
+    {
+        double3 xformOp:translate = (-0.03, 0.5645000000000001, 0.026000000000000002)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Mesh "Mesh"
+        {
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 0, 4, 5, 1, 0, 2, 6, 4, 2, 3, 7, 6, 4, 6, 7, 5, 1, 5, 7, 3]
+            normal3f[] normals = [(0, 0, -1), (0, -1, 0), (-1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 0, 0)] (
+                interpolation = "uniform"
+            )
+            point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
+            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+                interpolation = "constant"
+            )
+            uniform token subdivisionScheme = "none"
+        }
+    }
+}
+

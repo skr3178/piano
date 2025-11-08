@@ -1,8 +1,25 @@
-__pycache__/
-third_party/
-soundfonts/
-*.egg-info/
-.eggs/
-build/
-dist/
-pig_single_finger/
+# Large folders and files to omit
+robopianist/
+robopianist-rl/
+Eureka/
+mujoco-usd-converter/
+humanoid-pianist/
+PianoFingeringDataset_v1.2/
+PianoFingeringDataset_v1.2.zip
+__MACOSX/
+
+# Large media files
+*.mov
+allegroHand.usda
+exports.zip
+exports.zip.local
+
+# Large directories
+convert/
+exports/
+
+# Log files
+test_output.log
+
+# Thumbnails
+.thumbs/

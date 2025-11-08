@@ -1,0 +1,62 @@
+# Isaac Sim Piano + Shadow Hands Configuration File
+
+# USD file paths (relative to this config file location)
+assets:
+  piano_usd: "piano_fixed.usd"
+  left_hand_usd: "hand_left.usd"
+  right_hand_usd: "hand_right.usd"
+
+# Hand positions and orientations (from MuJoCo setup)
+# Positions are in (x, y, z) format
+# Quaternions are in (w, x, y, z) format
+hands:
+  left:
+    position: [0.4, -0.15, 0.13]
+    quaternion: [-1, -1, 1, 1]  # (w, x, y, z)
+    prim_path: "/World/left_hand"
+  right:
+    position: [0.4, 0.15, 0.13]
+    quaternion: [-1, -1, 1, 1]  # (w, x, y, z)
+    prim_path: "/World/right_hand"
+
+# Piano configuration
+piano:
+  position: [0.0, 0.0, 0.0]
+  quaternion: [1, 0, 0, 0]  # Identity quaternion
+  prim_path: "/World/piano"
+
+# Physics parameters
+physics:
+  gravity_direction: [0, 0, -1]  # Z-down for Isaac Sim
+  gravity_magnitude: 9.81
+  solver_type: "PGS"  # Position-based Gauss-Seidel or "TGS" for Temporal Gauss-Seidel
+  physics_scene_path: "/PhysicsScene"
+  
+  # Piano base should be kinematic (static)
+  piano_base_kinematic: true
+  
+  # Piano keys should be dynamic
+  piano_keys_dynamic: true
+
+# Collision configuration
+collisions:
+  # Disable collisions between hands
+  disable_hand_hand_collisions: true
+  
+  # Enable collisions between hands and piano
+  enable_hand_piano_collisions: true
+  
+  # Collision groups (if using Isaac Sim collision groups)
+  hand_collision_group: 1
+  piano_collision_group: 2
+
+# Debug settings
+debug:
+  verbose: false
+  print_prim_hierarchy: false
+  validate_physics: true
+
+# Scene hierarchy root
+scene:
+  root_path: "/World"
+
