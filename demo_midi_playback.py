@@ -278,7 +278,7 @@ def main():
         notes_pressed += 1
         key_idx = midi_note_to_key_index(note)
         # Note: This callback may not fire in actuator mode, so we also print in the main loop
-        # print(f"♪ Note ON:  {note:3d} | Key: {key_idx:2d} | Velocity: {velocity}")
+        print(f"♪ Note ON:  {note:3d} | Key: {key_idx:2d} | Velocity: {velocity}")
     
     def on_note_off(note: int):
         nonlocal notes_released
@@ -357,11 +357,9 @@ def main():
             
             if note_on:
                 # Press key (action = 1.0 for full press)
-                # Scale effort to overcome spring (spring stiffness is 10 Nm/rad)
-                # Use a reasonable effort value that can press the key down
-                # Typical key press requires ~0.5-2 Nm to overcome spring
-                effort_scale = 2.0  # Nm per unit action
-                current_action[key_idx] = 1.0 * effort_scale
+                # Using position control: action > 0.1 triggers key press
+                # Position control directly sets joint to pressed position (upper limit)
+                current_action[key_idx] = 1.0  # Position target (1.0 = pressed)
                 
                 # Real-time output: Show key press
                 midi_note = key_idx + 21  # Convert key index to MIDI note (A0 = 21)
@@ -568,23 +566,94 @@ def main():
                 # Auto-convert to video
                 print(f"\n🎬 Converting recording to video (30fps)...")
                 output_video = os.path.join(Path(__file__).parent, f"midi_playback_{recording_timestamp}.mp4")
-                input_pattern = os.path.join(actual_path, "rgb_%04d.png")
+                
+                # Detect actual file pattern
+                input_pattern = None
+                if os.path.exists(actual_path):
+                    # Check for common patterns
+                    files = sorted([f for f in os.listdir(actual_path) if f.endswith('.png')])
+                    if files:
+                        # Try to detect pattern
+                        first_file = files[0]
+                        if first_file.startswith('rgb_'):
+                            # Pattern: rgb_0000.png, rgb_0001.png, etc.
+                            # Extract the number format
+                            import re
+                            match = re.search(r'rgb_(\d+)\.png', first_file)
+                            if match:
+                                num_digits = len(match.group(1))
+                                pattern = f"rgb_%0{num_digits}d.png"
+                                input_pattern = os.path.join(actual_path, pattern)
+                        elif first_file.startswith('frame_'):
+                            # Pattern: frame_0000.png, frame_0001.png, etc.
+                            import re
+                            match = re.search(r'frame_(\d+)\.png', first_file)
+                            if match:
+                                num_digits = len(match.group(1))
+                                pattern = f"frame_%0{num_digits}d.png"
+                                input_pattern = os.path.join(actual_path, pattern)
+                        else:
+                            # Fallback: use glob pattern
+                            input_pattern = os.path.join(actual_path, "*.png")
+                            print(f"  ⚠️  Using glob pattern (may need manual conversion)")
+                
+                if not input_pattern:
+                    # Default fallback
+                    input_pattern = os.path.join(actual_path, "rgb_%04d.png")
+                    print(f"  ⚠️  Could not detect file pattern, using default: {input_pattern}")
+                    if os.path.exists(actual_path):
+                        actual_files = [f for f in os.listdir(actual_path) if f.endswith('.png')]
+                        if actual_files:
+                            print(f"  Found {len(actual_files)} PNG files. Sample filenames:")
+                            for f in sorted(actual_files)[:5]:
+                                print(f"    - {f}")
+                            if len(actual_files) > 5:
+                                print(f"    ... and {len(actual_files) - 5} more")
+                    print(f"  Please check the actual filenames in: {actual_path}")
                 
                 try:
                     # Check if ffmpeg is available
                     subprocess.run(["ffmpeg", "-version"], capture_output=True, check=True)
                     
-                    # Run ffmpeg conversion
-                    cmd = [
-                        "ffmpeg", "-y",  # Overwrite output file
-                        "-framerate", "30",
-                        "-i", input_pattern,
-                        "-c:v", "libx264",
-                        "-pix_fmt", "yuv420p",
-                        output_video
-                    ]
-                    
-                    result = subprocess.run(cmd, capture_output=True, text=True)
+                    # If using glob pattern, use different ffmpeg approach
+                    if input_pattern.endswith("*.png"):
+                        # Use glob pattern with ffmpeg
+                        import glob
+                        png_files = sorted(glob.glob(os.path.join(actual_path, "*.png")))
+                        if png_files:
+                            # Create a temporary file list for ffmpeg
+                            import tempfile
+                            with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False) as f:
+                                for png_file in png_files:
+                                    f.write(f"file '{png_file}'\n")
+                                file_list = f.name
+                            
+                            cmd = [
+                                "ffmpeg", "-y",
+                                "-f", "concat", "-safe", "0",
+                                "-i", file_list,
+                                "-framerate", "30",
+                                "-c:v", "libx264",
+                                "-pix_fmt", "yuv420p",
+                                output_video
+                            ]
+                            
+                            result = subprocess.run(cmd, capture_output=True, text=True)
+                            os.unlink(file_list)  # Clean up temp file
+                        else:
+                            raise FileNotFoundError("No PNG files found")
+                    else:
+                        # Standard pattern-based conversion
+                        cmd = [
+                            "ffmpeg", "-y",  # Overwrite output file
+                            "-framerate", "30",
+                            "-i", input_pattern,
+                            "-c:v", "libx264",
+                            "-pix_fmt", "yuv420p",
+                            output_video
+                        ]
+                        
+                        result = subprocess.run(cmd, capture_output=True, text=True)
                     
                     if result.returncode == 0:
                         file_size = os.path.getsize(output_video) / (1024 * 1024)  # Size in MB
@@ -593,16 +662,24 @@ def main():
                     else:
                         print(f"  ⚠️  FFmpeg conversion failed:")
                         print(f"     {result.stderr}")
+                        print(f"  Detected pattern: {input_pattern}")
+                        print(f"  Files in directory: {len(files) if 'files' in locals() else 'unknown'}")
                         print(f"  Manual conversion command:")
-                        print(f"  ffmpeg -framerate 30 -i {input_pattern} -c:v libx264 -pix_fmt yuv420p {output_video}")
+                        if input_pattern.endswith("*.png"):
+                            print(f"  (Use glob pattern or list files manually)")
+                        else:
+                            print(f"  ffmpeg -framerate 30 -i {input_pattern} -c:v libx264 -pix_fmt yuv420p {output_video}")
                         
                 except FileNotFoundError:
                     print(f"  ⚠️  FFmpeg not found. Please install ffmpeg or convert manually:")
-                    print(f"  ffmpeg -framerate 30 -i {input_pattern} -c:v libx264 -pix_fmt yuv420p {output_video}")
+                    if not input_pattern.endswith("*.png"):
+                        print(f"  ffmpeg -framerate 30 -i {input_pattern} -c:v libx264 -pix_fmt yuv420p {output_video}")
                 except Exception as e:
                     print(f"  ⚠️  Error during video conversion: {e}")
+                    print(f"  Detected pattern: {input_pattern}")
                     print(f"  Manual conversion command:")
-                    print(f"  ffmpeg -framerate 30 -i {input_pattern} -c:v libx264 -pix_fmt yuv420p {output_video}")
+                    if not input_pattern.endswith("*.png"):
+                        print(f"  ffmpeg -framerate 30 -i {input_pattern} -c:v libx264 -pix_fmt yuv420p {output_video}")
             print()
             break
     

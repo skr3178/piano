@@ -364,20 +364,49 @@ class IsaacPianoController:
             color_attr.Set([color])
 
     def apply_action(self, action: np.ndarray) -> None:
-        """Apply control action to the piano.
+        """Apply control action to the piano using position control.
         
+        This mimics MuJoCo's position-controlled actuators (servos).
         Only works if add_actuators=True.
         
         Args:
             action: Control action array of shape (89,) where:
-                - action[0:88] are key control signals
+                - action[0:88] are key control signals (treated as position targets)
                 - action[88] is the sustain pedal
         """
         if not self._add_actuators:
             raise ValueError("Cannot apply action if `add_actuators` is False.")
         
-        # Apply joint efforts to keys
-        self._articulation.set_joint_efforts(action[:-1])
+        # Ensure joints are set up
+        if not hasattr(self, '_joint_indices') or not self._joint_indices:
+            return  # Will be set up on first update
+        
+        # Convert action values to target joint positions
+        # Action > threshold (0.1) = pressed → upper limit (fully pressed)
+        # Action <= threshold = released → lower limit (rest position)
+        action_threshold = 0.1
+        target_positions = np.zeros(piano_consts.NUM_KEYS)
+        
+        for key_id in range(piano_consts.NUM_KEYS):
+            if key_id in self._joint_indices:
+                joint_idx = self._joint_indices[key_id]
+                if action[key_id] > action_threshold:
+                    # Pressed: set to upper limit (fully pressed position)
+                    target_positions[key_id] = self._qpos_range[joint_idx, 1]
+                else:
+                    # Released: set to lower limit (rest position)
+                    target_positions[key_id] = self._qpos_range[joint_idx, 0]
+        
+        # Map target positions to joint indices and set them
+        joint_names = self._articulation.dof_names
+        if joint_names is not None:
+            sorted_positions = np.zeros(len(joint_names))
+            for key_id, joint_idx in self._joint_indices.items():
+                if joint_idx < len(sorted_positions):
+                    sorted_positions[joint_idx] = target_positions[key_id]
+            
+            # Apply position control (like MuJoCo's position servo)
+            self._articulation.set_joint_positions(sorted_positions)
         
         # Store current action for visual feedback (keys pressed if action > threshold)
         # This allows keys to turn red based on action, not just position
