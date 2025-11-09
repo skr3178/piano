@@ -74,6 +74,9 @@ class IsaacPianoController:
         self._key_mesh_paths: Dict[int, str] = {}
         self._original_colors: Dict[int, tuple] = {}
         
+        # Track current action for visual feedback (keys pressed if action > threshold)
+        self._current_action = np.zeros(piano_consts.NUM_KEYS)
+        
         # Initialize state arrays
         self._initialize_state()
 
@@ -118,10 +121,32 @@ class IsaacPianoController:
                 if joint:
                     lower_limit_attr = joint.GetLowerLimitAttr()
                     upper_limit_attr = joint.GetUpperLimitAttr()
-                    if lower_limit_attr:
-                        self._qpos_lower[idx] = np.radians(lower_limit_attr.Get() or -5.7)  # Convert degrees to radians
-                    if upper_limit_attr:
-                        self._qpos_upper[idx] = np.radians(upper_limit_attr.Get() or 0.0)
+                    if lower_limit_attr and lower_limit_attr.IsValid():
+                        lower_val = lower_limit_attr.Get()
+                        # Check if value is not None (0.0 is a valid value!)
+                        if lower_val is not None:
+                            self._qpos_lower[idx] = np.radians(lower_val)  # Convert degrees to radians
+                        else:
+                            self._qpos_lower[idx] = 0.0  # Default to 0° if not set
+                    else:
+                        self._qpos_lower[idx] = 0.0  # Default to 0° if attribute doesn't exist
+                    
+                    if upper_limit_attr and upper_limit_attr.IsValid():
+                        upper_val = upper_limit_attr.Get()
+                        if upper_val is not None:
+                            self._qpos_upper[idx] = np.radians(upper_val)
+                        else:
+                            # Default to max angle if not set (calculate from constants)
+                            from . import piano_constants as pc
+                            is_black = idx in self._key_ids and self._key_ids[idx] in pc.BLACK_KEY_INDICES
+                            max_angle = pc.BLACK_KEY_JOINT_MAX_ANGLE if is_black else pc.WHITE_KEY_JOINT_MAX_ANGLE
+                            self._qpos_upper[idx] = max_angle
+                    else:
+                        # Default to max angle if attribute doesn't exist
+                        from . import piano_constants as pc
+                        is_black = idx in self._key_ids and self._key_ids[idx] in pc.BLACK_KEY_INDICES
+                        max_angle = pc.BLACK_KEY_JOINT_MAX_ANGLE if is_black else pc.WHITE_KEY_JOINT_MAX_ANGLE
+                        self._qpos_upper[idx] = max_angle
         
         # Store joint ranges
         self._qpos_range = np.column_stack([self._qpos_lower, self._qpos_upper])
@@ -231,54 +256,49 @@ class IsaacPianoController:
         # Get current joint positions
         joint_positions = self._articulation.get_joint_positions()
         
-        if self._add_actuators:
-            # In actuator mode, check control signals
-            ctrl = self._articulation.get_applied_joint_efforts()
-            ctrl_idxs = ctrl >= self._ctrl_midpoint
-            self._activation[:] = ctrl_idxs
+        # Always use position-based detection for more accurate state tracking
+        # Sort joint positions by key ID
+        sorted_positions = np.zeros(piano_consts.NUM_KEYS)
+        for key_id, joint_idx in self._joint_indices.items():
+            if joint_idx < len(joint_positions):
+                sorted_positions[key_id] = joint_positions[joint_idx]
+        
+        # Clip joint positions to their limits
+        self._state[:] = np.clip(sorted_positions, *self._qpos_range.T)
+        
+        # Normalize state
+        range_span = self._qpos_range[:, 1] - self._qpos_range[:, 0]
+        # Avoid division by zero
+        range_span = np.where(range_span == 0, 1.0, range_span)
+        self._normalized_state[:] = (
+            (self._state - self._qpos_range[:, 0]) / range_span
+        )
+        
+        # Detect activation: key is near its upper limit (fully pressed)
+        # Upper limit is the maximum rotation (pressed position)
+        self._activation[:] = (
+            np.abs(self._state - self._qpos_range[:, 1]) <= piano_consts.KEY_THRESHOLD
+        )
+        
+        # Debug: Track stuck keys
+        if not hasattr(self, '_stuck_key_debug_counter'):
+            self._stuck_key_debug_counter = 0
+            self._last_active_keys = set()
+        
+        current_active = set(np.where(self._activation)[0])
+        if len(current_active) > 0 and current_active == self._last_active_keys:
+            self._stuck_key_debug_counter += 1
+            if self._stuck_key_debug_counter == 100:  # Report after 100 consecutive steps
+                stuck_key = list(current_active)[0]
+                print(f"DEBUG: Key {stuck_key} seems stuck!")
+                print(f"  Position: {self._state[stuck_key]:.6f} rad")
+                print(f"  Upper limit: {self._qpos_range[stuck_key, 1]:.6f} rad")
+                print(f"  Distance from limit: {abs(self._state[stuck_key] - self._qpos_range[stuck_key, 1]):.6f} rad")
+                print(f"  Threshold: {piano_consts.KEY_THRESHOLD:.6f} rad")
+                self._stuck_key_debug_counter = 0  # Reset
         else:
-            # In passive mode, check joint positions
-            # Sort joint positions by key ID
-            sorted_positions = np.zeros(piano_consts.NUM_KEYS)
-            for key_id, joint_idx in self._joint_indices.items():
-                if joint_idx < len(joint_positions):
-                    sorted_positions[key_id] = joint_positions[joint_idx]
-            
-            # Clip joint positions to their limits
-            self._state[:] = np.clip(sorted_positions, *self._qpos_range.T)
-            
-            # Normalize state
-            range_span = self._qpos_range[:, 1] - self._qpos_range[:, 0]
-            # Avoid division by zero
-            range_span = np.where(range_span == 0, 1.0, range_span)
-            self._normalized_state[:] = (
-                (self._state - self._qpos_range[:, 0]) / range_span
-            )
-            
-            # Detect activation: key is near its upper limit
-            self._activation[:] = (
-                np.abs(self._state - self._qpos_range[:, 1]) <= piano_consts.KEY_THRESHOLD
-            )
-            
-            # Debug: Track stuck keys
-            if not hasattr(self, '_stuck_key_debug_counter'):
-                self._stuck_key_debug_counter = 0
-                self._last_active_keys = set()
-            
-            current_active = set(np.where(self._activation)[0])
-            if len(current_active) > 0 and current_active == self._last_active_keys:
-                self._stuck_key_debug_counter += 1
-                if self._stuck_key_debug_counter == 100:  # Report after 100 consecutive steps
-                    stuck_key = list(current_active)[0]
-                    print(f"DEBUG: Key {stuck_key} seems stuck!")
-                    print(f"  Position: {self._state[stuck_key]:.6f} rad")
-                    print(f"  Upper limit: {self._qpos_range[stuck_key, 1]:.6f} rad")
-                    print(f"  Distance from limit: {abs(self._state[stuck_key] - self._qpos_range[stuck_key, 1]):.6f} rad")
-                    print(f"  Threshold: {piano_consts.KEY_THRESHOLD:.6f} rad")
-                    self._stuck_key_debug_counter = 0  # Reset
-            else:
-                self._stuck_key_debug_counter = 0
-                self._last_active_keys = current_active
+            self._stuck_key_debug_counter = 0
+            self._last_active_keys = current_active
         
         # Update sustain state
         self._sustain_activation[:] = self._sustain_state >= piano_consts.SUSTAIN_THRESHOLD
@@ -294,7 +314,20 @@ class IsaacPianoController:
         if stage is None:
             return
         
-        for key_id, is_active in enumerate(self._activation):
+        # Determine which keys should be colored as active
+        # In actuator mode, use action values for visual feedback (more reliable than position)
+        keys_to_color_red = np.zeros(piano_consts.NUM_KEYS, dtype=bool)
+        
+        if self._add_actuators and hasattr(self, '_current_action'):
+            # Use action values: key is "active" if action > threshold
+            # Action values are in Nm (effort), typically 0-2.0 for pressed keys
+            action_threshold = 0.1  # If effort > 0.1 Nm, consider key as pressed/active
+            keys_to_color_red = self._current_action > action_threshold
+        else:
+            # Use position-based activation detection
+            keys_to_color_red = self._activation
+        
+        for key_id in range(piano_consts.NUM_KEYS):
             mesh_path = self._key_mesh_paths.get(key_id)
             if not mesh_path:
                 continue
@@ -312,8 +345,8 @@ class IsaacPianoController:
             if not color_attr:
                 color_attr = mesh.CreateDisplayColorAttr()
             
-            if is_active:
-                # Set activation color (green)
+            if keys_to_color_red[key_id]:
+                # Set activation color (bright red for high visibility)
                 color = self._Gf.Vec3f(
                     piano_consts.ACTIVATION_COLOR[0],
                     piano_consts.ACTIVATION_COLOR[1],
@@ -345,6 +378,12 @@ class IsaacPianoController:
         
         # Apply joint efforts to keys
         self._articulation.set_joint_efforts(action[:-1])
+        
+        # Store current action for visual feedback (keys pressed if action > threshold)
+        # This allows keys to turn red based on action, not just position
+        if not hasattr(self, '_current_action'):
+            self._current_action = np.zeros(piano_consts.NUM_KEYS)
+        self._current_action[:] = action[:-1]  # Store key actions (exclude sustain)
         
         # Set sustain state
         self._sustain_state[0] = action[-1]

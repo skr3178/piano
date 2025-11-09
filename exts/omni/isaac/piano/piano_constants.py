@@ -51,9 +51,10 @@ BLACK_KEY_JOINT_MAX_ANGLE = atan(BLACK_KEY_TRAVEL_DISTANCE / BLACK_KEY_LENGTH)
 WHITE_KEY_MASS = 0.04
 BLACK_KEY_MASS = 0.02
 # Joint spring reference, in degrees.
-# At equilibrium, the joint should be at 0 degrees.
-WHITE_KEY_SPRINGREF = -1
-BLACK_KEY_SPRINGREF = -1
+# This is the target position the spring tries to maintain (rest position).
+# Should match the lower limit (0°) so spring pulls keys back to rest.
+WHITE_KEY_SPRINGREF = 0.0  # Changed from -1° to 0° to match rest position
+BLACK_KEY_SPRINGREF = 0.0  # Changed from -1° to 0° to match rest position
 # Joint spring stiffness, in Nm/rad.
 # The spring should be stiff enough to support the weight of the key at equilibrium.
 # Increased from 2 to 10 for faster key return in PhysX
@@ -69,13 +70,14 @@ BLACK_JOINT_ARMATURE = 0.001
 ACTUATOR_DYNPRM = 1
 ACTUATOR_GAINPRM = 1
 
-# Colors - improved for better visuals.
-WHITE_KEY_COLOR = [0.95, 0.95, 0.95, 1]  # Brighter white
+# Colors - improved for better visuals and video clarity.
+WHITE_KEY_COLOR = [1.0, 1.0, 1.0, 1]  # Pure white for maximum visibility
 BLACK_KEY_COLOR = [0.05, 0.05, 0.05, 1]  # Deeper black  
 BASE_COLOR = [0.12, 0.12, 0.15, 1]  # Slightly blue-tinted dark gray
 
 # Key color when it is pressed.
-ACTIVATION_COLOR = [0.2, 0.9, 0.3, 1.0]  # Brighter green
+# Using bright red for maximum visibility in videos
+ACTIVATION_COLOR = [1.0, 0.1, 0.1, 1.0]  # Bright red for high visibility
 
 # Thresholds for determining whether a key is activated.
 KEY_THRESHOLD = 0.00872665  # 0.5 degrees in radians.

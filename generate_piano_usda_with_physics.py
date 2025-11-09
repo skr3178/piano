@@ -20,7 +20,11 @@ from pathlib import Path
 # Add the robopianist directory to path
 sys.path.insert(0, str(Path(__file__).parent / "robopianist"))
 
-from robopianist.models.piano import piano_constants as consts
+# Try to use local constants first, fallback to robopianist
+try:
+    from exts.omni.isaac.piano import piano_constants as consts
+except ImportError:
+    from robopianist.models.piano import piano_constants as consts
 
 try:
     from pxr import Gf, Sdf, Usd, UsdGeom, UsdPhysics, UsdShade, Vt
@@ -545,7 +549,7 @@ def main():
     print("Physics properties preserved from MuJoCo XML:")
     print(f"  • Joint stiffness: {consts.WHITE_KEY_STIFFNESS} Nm/rad")
     print(f"  • Joint damping: {consts.WHITE_JOINT_DAMPING}")
-    print(f"  • Spring reference: {consts.WHITE_KEY_SPRINGREF}°")
+    print(f"  • Spring reference: {consts.WHITE_KEY_SPRINGREF}° (matches rest position)")
     print(f"  • White key mass: {consts.WHITE_KEY_MASS} kg")
     print(f"  • Black key mass: {consts.BLACK_KEY_MASS} kg")
     print()

@@ -52,7 +52,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.05, -0.6105, -0.02), (0.05, -0.6105, -0.02), (-0.05, 0.6105, -0.02), (0.05, 0.6105, -0.02), (-0.05, -0.6105, 0.02), (0.05, -0.6105, 0.02), (-0.05, 0.6105, 0.02), (0.05, 0.6105, 0.02)]
-            color3f[] primvars:displayColor = [(0.15, 0.15, 0.15)] (
+            color3f[] primvars:displayColor = [(0.12, 0.12, 0.15)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -89,7 +89,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -115,8 +115,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -126,8 +126,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.59925, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -148,7 +148,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -174,8 +174,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -185,8 +185,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.57575, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -207,7 +207,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -233,8 +233,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -244,8 +244,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.55225, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -266,7 +266,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -292,8 +292,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -303,8 +303,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.52875, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -325,7 +325,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -351,8 +351,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -362,8 +362,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.50525, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -384,7 +384,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -410,8 +410,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -421,8 +421,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.48175, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -443,7 +443,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -469,8 +469,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -480,8 +480,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.45825, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -502,7 +502,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -528,8 +528,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -539,8 +539,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.43475, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -561,7 +561,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -587,8 +587,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -598,8 +598,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.41125, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -620,7 +620,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -646,8 +646,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -657,8 +657,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.38775, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -679,7 +679,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -705,8 +705,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -716,8 +716,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.36425, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -738,7 +738,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -764,8 +764,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -775,8 +775,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.34075, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -797,7 +797,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -823,8 +823,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -834,8 +834,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.31725, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -856,7 +856,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -882,8 +882,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -893,8 +893,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.29375, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -915,7 +915,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -941,8 +941,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -952,8 +952,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.27025, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -974,7 +974,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -1000,8 +1000,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -1011,8 +1011,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.24675, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -1033,7 +1033,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -1059,8 +1059,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -1070,8 +1070,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.22325, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -1092,7 +1092,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -1118,8 +1118,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -1129,8 +1129,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.19975, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -1151,7 +1151,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -1177,8 +1177,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -1188,8 +1188,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.17625, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -1210,7 +1210,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -1236,8 +1236,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -1247,8 +1247,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.15275, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -1269,7 +1269,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -1295,8 +1295,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -1306,8 +1306,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.12925, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -1328,7 +1328,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -1354,8 +1354,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -1365,8 +1365,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.10575, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -1387,7 +1387,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -1413,8 +1413,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -1424,8 +1424,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.08225, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -1446,7 +1446,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -1472,8 +1472,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -1483,8 +1483,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.05875, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -1505,7 +1505,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -1531,8 +1531,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -1542,8 +1542,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.03525, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -1564,7 +1564,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -1590,8 +1590,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -1601,8 +1601,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.01175, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -1623,7 +1623,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -1649,8 +1649,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -1660,8 +1660,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.01175, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -1682,7 +1682,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -1708,8 +1708,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -1719,8 +1719,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.03525, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -1741,7 +1741,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -1767,8 +1767,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -1778,8 +1778,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.05875, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -1800,7 +1800,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -1826,8 +1826,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -1837,8 +1837,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.08225, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -1859,7 +1859,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -1885,8 +1885,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -1896,8 +1896,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.10575, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -1918,7 +1918,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -1944,8 +1944,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -1955,8 +1955,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.12925, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -1977,7 +1977,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -2003,8 +2003,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -2014,8 +2014,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.15275, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -2036,7 +2036,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -2062,8 +2062,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -2073,8 +2073,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.17625, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -2095,7 +2095,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -2121,8 +2121,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -2132,8 +2132,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.19975, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -2154,7 +2154,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -2180,8 +2180,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -2191,8 +2191,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.22325, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -2213,7 +2213,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -2239,8 +2239,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -2250,8 +2250,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.24675, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -2272,7 +2272,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -2298,8 +2298,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -2309,8 +2309,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.27025, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -2331,7 +2331,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -2357,8 +2357,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -2368,8 +2368,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.29375, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -2390,7 +2390,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -2416,8 +2416,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -2427,8 +2427,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.31725, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -2449,7 +2449,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -2475,8 +2475,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -2486,8 +2486,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.34075, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -2508,7 +2508,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -2534,8 +2534,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -2545,8 +2545,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.36425, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -2567,7 +2567,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -2593,8 +2593,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -2604,8 +2604,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.38775, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -2626,7 +2626,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -2652,8 +2652,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -2663,8 +2663,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.41125, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -2685,7 +2685,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -2711,8 +2711,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -2722,8 +2722,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.43475, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -2744,7 +2744,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -2770,8 +2770,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -2781,8 +2781,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.45825, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -2803,7 +2803,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -2829,8 +2829,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -2840,8 +2840,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.48175, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -2862,7 +2862,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -2888,8 +2888,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -2899,8 +2899,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.50525, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -2921,7 +2921,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -2947,8 +2947,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -2958,8 +2958,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.52875, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -2980,7 +2980,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -3006,8 +3006,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -3017,8 +3017,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.55225, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -3039,7 +3039,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -3065,8 +3065,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -3076,8 +3076,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.57575, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -3098,7 +3098,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.075, -0.01125, -0.01125), (0.075, -0.01125, -0.01125), (-0.075, 0.01125, -0.01125), (0.075, 0.01125, -0.01125), (-0.075, -0.01125, 0.01125), (0.075, -0.01125, 0.01125), (-0.075, 0.01125, 0.01125), (0.075, 0.01125, 0.01125)]
-            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)] (
+            color3f[] primvars:displayColor = [(1, 1, 1)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -3124,8 +3124,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -3135,8 +3135,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.59925, -0.00875)
         point3f physics:localPos1 = (-0.075, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 3.8140748
     }
 
@@ -3157,7 +3157,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -3183,8 +3183,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -3194,8 +3194,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.5875, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -3216,7 +3216,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -3242,8 +3242,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -3253,8 +3253,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.54, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -3275,7 +3275,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -3301,8 +3301,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -3312,8 +3312,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.5165, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -3334,7 +3334,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -3360,8 +3360,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -3371,8 +3371,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.3755, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -3393,7 +3393,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -3419,8 +3419,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -3430,8 +3430,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.352, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -3452,7 +3452,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -3478,8 +3478,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -3489,8 +3489,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.211, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -3511,7 +3511,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -3537,8 +3537,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -3548,8 +3548,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.1875, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -3570,7 +3570,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -3596,8 +3596,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -3607,8 +3607,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.0465, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -3629,7 +3629,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -3655,8 +3655,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -3666,8 +3666,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.023, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -3688,7 +3688,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -3714,8 +3714,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -3725,8 +3725,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.118, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -3747,7 +3747,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -3773,8 +3773,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -3784,8 +3784,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.1415, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -3806,7 +3806,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -3832,8 +3832,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -3843,8 +3843,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.2825, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -3865,7 +3865,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -3891,8 +3891,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -3902,8 +3902,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.306, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -3924,7 +3924,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -3950,8 +3950,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -3961,8 +3961,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.447, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -3983,7 +3983,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -4009,8 +4009,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -4020,8 +4020,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.4705, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -4042,7 +4042,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -4068,8 +4068,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -4079,8 +4079,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.4695, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -4101,7 +4101,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -4127,8 +4127,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -4138,8 +4138,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.446, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -4160,7 +4160,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -4186,8 +4186,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -4197,8 +4197,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.4225, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -4219,7 +4219,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -4245,8 +4245,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -4256,8 +4256,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.305, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -4278,7 +4278,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -4304,8 +4304,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -4315,8 +4315,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.2815, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -4337,7 +4337,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -4363,8 +4363,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -4374,8 +4374,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.258, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -4396,7 +4396,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -4422,8 +4422,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -4433,8 +4433,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.1405, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -4455,7 +4455,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -4481,8 +4481,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -4492,8 +4492,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.117, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -4514,7 +4514,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -4540,8 +4540,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -4551,8 +4551,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, -0.0935, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -4573,7 +4573,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -4599,8 +4599,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -4610,8 +4610,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.024, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -4632,7 +4632,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -4658,8 +4658,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -4669,8 +4669,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.0475, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -4691,7 +4691,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -4717,8 +4717,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -4728,8 +4728,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.071, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -4750,7 +4750,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -4776,8 +4776,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -4787,8 +4787,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.1885, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -4809,7 +4809,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -4835,8 +4835,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -4846,8 +4846,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.212, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -4868,7 +4868,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -4894,8 +4894,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -4905,8 +4905,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.2355, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -4927,7 +4927,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -4953,8 +4953,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -4964,8 +4964,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.353, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -4986,7 +4986,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -5012,8 +5012,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -5023,8 +5023,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.3765, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -5045,7 +5045,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -5071,8 +5071,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -5082,8 +5082,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.4, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -5104,7 +5104,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -5130,8 +5130,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -5141,8 +5141,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.5175, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -5163,7 +5163,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -5189,8 +5189,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -5200,8 +5200,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.541, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 
@@ -5222,7 +5222,7 @@ def Xform "Piano" (
                 interpolation = "uniform"
             )
             point3f[] points = [(-0.045, -0.005, -0.009), (0.045, -0.005, -0.009), (-0.045, 0.005, -0.009), (0.045, 0.005, -0.009), (-0.045, -0.005, 0.009), (0.045, -0.005, 0.009), (-0.045, 0.005, 0.009), (0.045, 0.005, 0.009)]
-            color3f[] primvars:displayColor = [(0.1, 0.1, 0.1)] (
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)] (
                 interpolation = "constant"
             )
             uniform token subdivisionScheme = "none"
@@ -5248,8 +5248,8 @@ def Xform "Piano" (
     {
         float drive:angular:physics:damping = 0.05
         float drive:angular:physics:maxForce = 1000
-        float drive:angular:physics:stiffness = 2
-        float drive:angular:physics:targetPosition = -1
+        float drive:angular:physics:stiffness = 10
+        float drive:angular:physics:targetPosition = 0
         uniform token drive:angular:physics:type = "force"
         custom float physics:armature = 0.001
         uniform token physics:axis = "Y"
@@ -5259,8 +5259,8 @@ def Xform "Piano" (
         point3f physics:localPos0 = (0.052, 0.5645, 0.006)
         point3f physics:localPos1 = (-0.045, 0, 0)
         float physics:lowerLimit = 0
-        custom float physics:springReference = -0.017453292
-        custom float physics:stiffness = 2
+        custom float physics:springReference = 0
+        custom float physics:stiffness = 10
         float physics:upperLimit = 5.079608
     }
 }
