@@ -10,6 +10,7 @@ __MACOSX/
 
 # Large media files
 *.mov
+*.mp4
 allegroHand.usda
 exports.zip
 exports.zip.local
@@ -17,9 +18,14 @@ exports.zip.local
 # Large directories
 convert/
 exports/
+recordings/
 
 # Log files
 test_output.log
 
 # Thumbnails
 .thumbs/
+
+# Python cache
+__pycache__/
+*.pyc

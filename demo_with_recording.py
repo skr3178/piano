@@ -13,7 +13,6 @@ simulation_app = SimulationApp({"headless": False, "width": 1920, "height": 1080
 from omni.isaac.core import World
 from omni.isaac.core.articulations import Articulation
 from omni.isaac.core.utils.stage import add_reference_to_stage
-from omni.isaac.core.utils.render_product import RenderProduct
 import omni.replicator.core as rep
 
 # Add piano extension
@@ -32,22 +31,23 @@ def setup_video_recording(output_dir: Path, fps: int = 60):
     """Setup video recording using Isaac Sim's replicator."""
     output_dir.mkdir(exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    video_path = output_dir / f"piano_recording_{timestamp}.mp4"
+    video_subdir = output_dir / f"piano_recording_{timestamp}"
     
     # Create render product for the active viewport
     render_product = rep.create.render_product("/OmniverseKit_Persp", resolution=(1920, 1080))
     
-    # Create video writer
+    # Create video writer (BasicWriter saves image sequences)
     writer = rep.WriterRegistry.get("BasicWriter")
     writer.initialize(
-        output_dir=str(output_dir),
-        rgb=True,
-        fps=fps
+        output_dir=str(video_subdir),
+        rgb=True
     )
     writer.attach([render_product])
     
-    print(f"✓ Video recording setup: {video_path}")
-    return writer, video_path
+    print(f"✓ Video recording setup: {video_subdir}")
+    print(f"  Note: Images will be saved as sequence. Use ffmpeg to convert:")
+    print(f"  ffmpeg -framerate {fps} -i '{video_subdir}/rgb_%04d.png' -c:v libx264 -pix_fmt yuv420p output.mp4")
+    return writer, video_subdir
 
 
 def setup_midi_to_audio(output_dir: Path):
@@ -86,7 +86,7 @@ def main():
     print("="*70)
     
     # Video recording
-    writer, video_path = setup_video_recording(output_dir)
+    writer, video_subdir = setup_video_recording(output_dir)
     
     # MIDI recording
     midi_file, midi_track, midi_path = setup_midi_to_audio(output_dir)
@@ -116,15 +116,47 @@ def main():
     piano_usd_path = Path(__file__).parent / "piano_with_physics.usda"
     add_reference_to_stage(str(piano_usd_path), "/Piano")
     
-    # Position camera for better view
-    from pxr import UsdGeom, Gf
+    # Add moderate lighting for clear visibility
+    from pxr import UsdGeom, Gf, UsdLux
+    
+    # Add a dome light for ambient illumination (reduced intensity)
+    dome_light = UsdLux.DomeLight.Define(stage, "/World/DomeLight")
+    dome_light.CreateIntensityAttr(500.0)  # Reduced from 2000
+    
+    # Add directional light (reduced intensity)
+    dist_light = UsdLux.DistantLight.Define(stage, "/World/OverheadLight")
+    dist_light.CreateIntensityAttr(1000.0)  # Reduced from 5000
+    dist_light_xform = UsdGeom.Xformable(dist_light.GetPrim())
+    dist_light_xform.AddRotateXYZOp().Set(Gf.Vec3f(-45, 45, 0))  # Angled lighting
+    
+    # Position camera for first-person view (sitting at piano, looking down at keys)
     camera_path = "/OmniverseKit_Persp"
     camera = UsdGeom.Camera.Get(stage, camera_path)
     if camera:
         xform = UsdGeom.Xformable(camera.GetPrim())
-        xform.ClearXformOpOrder()
-        xform.AddTranslateOp().Set(Gf.Vec3d(0.5, -1.5, 0.5))
-        xform.AddRotateXYZOp().Set(Gf.Vec3f(20, 0, 0))
+        xform_ops = xform.GetOrderedXformOps()
+        
+        # First-person view: in front of piano, slightly above, looking down at keys
+        # Position: slightly forward (Y negative), above keys (Z positive), centered (X=0)
+        if len(xform_ops) >= 1:
+            xform_ops[0].Set(Gf.Vec3d(0.0, -0.4, 0.35))  # In front and above keys
+        else:
+            translate_op = xform.AddTranslateOp()
+            translate_op.Set(Gf.Vec3d(0.0, -0.4, 0.35))
+        
+        # Rotate to look down at keys (pitch down ~25 degrees)
+        if len(xform_ops) >= 2:
+            xform_ops[1].Set(Gf.Vec3f(25, 0, 0))  # Pitch down to see keys
+        else:
+            rotate_op = xform.AddRotateXYZOp()
+            rotate_op.Set(Gf.Vec3f(25, 0, 0))
+        
+        # Zoom in 5x by reducing horizontal aperture (default ~20.96mm, zoom 5x = ~4.192mm)
+        horizontal_aperture = camera.GetHorizontalApertureAttr()
+        if horizontal_aperture:
+            default_aperture = horizontal_aperture.Get() or 20.96
+            camera.GetHorizontalApertureAttr().Set(default_aperture / 5.0)  # 5x zoom
+            print(f"✓ Camera zoomed 5x (aperture: {default_aperture:.2f}mm -> {default_aperture/5.0:.2f}mm)")
     
     # Create articulation
     piano_articulation = world.scene.add(
@@ -138,6 +170,24 @@ def main():
         change_color_on_activation=True,
         add_actuators=True,
     )
+    
+    # Manually set all keys to proper black/white colors BEFORE initialize_episode
+    from pxr import UsdGeom, Gf
+    from omni.isaac.core.utils.prims import get_prim_at_path
+    from exts.omni.isaac.piano.piano_constants import WHITE_KEY_INDICES, BLACK_KEY_INDICES, WHITE_KEY_COLOR, BLACK_KEY_COLOR
+    
+    print("Setting piano keys to black and white...")
+    for key_id in range(89):
+        is_white = key_id in WHITE_KEY_INDICES
+        key_type = "white" if is_white else "black"
+        mesh_path = f"/Piano/{key_type}_key_{key_id}/{key_type}_key_{key_id}_mesh"
+        
+        prim = get_prim_at_path(mesh_path)
+        if prim and prim.IsValid():
+            mesh = UsdGeom.Mesh(prim)
+            if mesh:
+                color = WHITE_KEY_COLOR[:3] if is_white else BLACK_KEY_COLOR[:3]
+                mesh.GetDisplayColorAttr().Set([Gf.Vec3f(*color)])
     
     # Track MIDI events with timestamps
     midi_events = []
@@ -248,7 +298,7 @@ def main():
         print(f"  To convert to audio:")
         print(f"    fluidsynth -ni soundfont.sf2 {midi_path} -F output.wav -r 44100")
     
-    print(f"✓ Video saved: {video_path}")
+    print(f"✓ Video frames saved: {video_subdir}")
     print("="*70)
     
     simulation_app.close()
