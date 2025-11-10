@@ -1,0 +1,671 @@
+#usda 1.0
+(
+    customLayerData = {
+        dictionary cameraSettings = {
+            dictionary Front = {
+                double3 position = (5, 0, 0)
+                double radius = 5
+            }
+            dictionary Perspective = {
+                double3 position = (0.7300495257794436, 0.814199165823869, 0.8461807792000522)
+                double3 target = (-0.05606491004408698, 0.19280292436287705, 0.15199917110339833)
+            }
+            dictionary Right = {
+                double3 position = (0, -5, 0)
+                double radius = 5
+            }
+            dictionary Top = {
+                double3 position = (0, 0, 5)
+                double radius = 5
+            }
+            string boundCamera = "/OmniverseKit_Persp"
+        }
+        dictionary omni_layer = {
+            string authoring_layer = "./piano_with_dex5.usda"
+            dictionary locked = {
+            }
+            dictionary muteness = {
+            }
+        }
+        dictionary renderSettings = {
+        }
+    }
+    defaultPrim = "World"
+    endTimeCode = 100
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    upAxis = "Z"
+)
+
+def PhysicsScene "PhysicsScene"
+{
+    vector3f physics:gravityDirection = (0, 0, -1)
+    float physics:gravityMagnitude = 9.81
+}
+
+def "PhysicsMaterials"
+{
+    def Material "PianoMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 0.5
+        float physics:restitution = 0.1
+        float physics:staticFriction = 0.6
+    }
+
+    def Material "HandMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 1
+        float physics:restitution = 0
+        float physics:staticFriction = 1
+    }
+}
+
+def Xform "World"
+{
+    def Xform "Piano" (
+        prepend references = @./piano_with_physics.usda@</Piano>
+    )
+    {
+        int physx:collisionFilter = 2
+        int physx:collisionGroup = 0
+    }
+
+    def Xform "left_hand" (
+        variants = {
+            string Physics = "PhysX"
+            string Robot = "Robot"
+            string Sensor = "None"
+        }
+        prepend variantSets = ["Physics", "Sensor", "Robot"]
+    )
+    {
+        int physx:collisionFilter = 1
+        int physx:collisionGroup = 1
+        quatd xformOp:orient = (6.123233995736766e-17, 0.7071067811865476, -0.7071067811865475, 4.329780281177466e-17)
+        double3 xformOp:scale = (-1, 1, 1)
+        double3 xformOp:translate = (0.4, -0.15, 0.13)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "base_link_R"
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (0, 0, 0)
+            quatd xformOp:orient = (0.9999999999993237, -9.878161144721185e-10, 1.1524521557373279e-8, -0.0000011629969659569327)
+            double3 xformOp:translate = (9.834766387384342e-8, -3.5762786843029915e-8, 7.927417752795485e-8)
+        }
+
+        over "Link_21R"
+        {
+            vector3f physics:angularVelocity = (-2.353683e-12, 7.885955e-13, -0.000008732582)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (2.7108468e-10, 1.161568e-9, 2.2752875e-17)
+            quatd xformOp:orient = (0.7831504261981796, -1.4359357977879752e-8, 3.543278356078383e-8, 0.6218323005003906)
+            double3 xformOp:translate = (0.010000237822532648, 0.07314296960830691, -0.003470132946968102)
+        }
+
+        over "Link_22R"
+        {
+            vector3f physics:angularVelocity = (-0.000006730581, -0.000028923305, -0.000008732594)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (6.713795e-9, 2.019064e-9, -9.685156e-9)
+            quatd xformOp:orient = (0.32869232423107114, 0.6842735963456471, 0.1782408338284152, 0.626068052604445)
+            double3 xformOp:translate = (0.010952168703079218, 0.07723366618156435, -0.003470132946968102)
+        }
+
+        over "Link_23R"
+        {
+            vector3f physics:angularVelocity = (0.0000022148577, 0.000009517835, -0.000008732584)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (1.493402e-8, 2.8914973e-9, -1.2321318e-8)
+            quatd xformOp:orient = (0.21086425400286812, 0.7051622849687007, 0.05240364322548678, 0.6749342756285467)
+            double3 xformOp:translate = (0.01705368757247927, 0.10345363020896914, 0.026115101873874655)
+        }
+
+        over "Link_24R"
+        {
+            vector3f physics:angularVelocity = (0.0000022148445, 0.000009517796, -0.000008732584)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (1.209537e-8, 4.3877573e-9, -1.14104735e-8)
+            quatd xformOp:orient = (0.21086417303182062, 0.705162398204257, 0.05240360009731878, 0.674934185967245)
+            double3 xformOp:translate = (0.018635043501853993, 0.11024918556213381, 0.04592215746641158)
+        }
+
+        over "Link_31R"
+        {
+            vector3f physics:angularVelocity = (8.901644e-12, -2.3568079e-12, 0.000034941917)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (-9.3000396e-10, -4.681219e-9, -7.3648635e-17)
+            quatd xformOp:orient = (0.7727329277810723, -3.210404470764306e-9, 1.9015473019520828e-8, 0.6347312993093156)
+            double3 xformOp:translate = (-0.011999762058258062, 0.07714300751686098, -0.003470132946968074)
+        }
+
+        over "Link_32R"
+        {
+            vector3f physics:angularVelocity = (-0.000014228788, -0.00007186165, 0.00003494187)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (8.966888e-9, -1.6774292e-8, -2.5476712e-8)
+            quatd xformOp:orient = (0.3546211784917556, 0.6689830820032835, 0.22904513083488257, 0.6117546761564949)
+            double3 xformOp:translate = (-0.011183968186378485, 0.08126299977302553, -0.003470132946968074)
+        }
+
+        over "Link_33R"
+        {
+            vector3f physics:angularVelocity = (-0.0000014183336, -0.0000071632485, 0.00003494187)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (2.7761626e-8, -3.457763e-8, -4.0176804e-8)
+            quatd xformOp:orient = (0.3546211979380117, 0.6689829784468347, 0.22904523682193897, 0.6117547384455583)
+            double3 xformOp:translate = (-0.0053204208612441795, 0.11087646484375002, 0.02277220517396926)
+        }
+
+        over "Link_34R"
+        {
+            vector3f physics:angularVelocity = (-0.000001418319, -0.0000071633103, 0.00003494187)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (2.7881812e-8, -4.277394e-8, -4.185226e-8)
+            quatd xformOp:orient = (0.3546211461627072, 0.6689830810294617, 0.22904521479516435, 0.6117546645265679)
+            double3 xformOp:translate = (-0.002346804738044689, 0.12589451074600222, 0.03714634209871291)
+        }
+
+        over "Link_41R"
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (0, 0, 0)
+            quatd xformOp:orient = (0.7071061693983617, 1.911194152746626e-8, 2.6986179709692476e-8, 0.7071073929742033)
+            double3 xformOp:translate = (-0.033999776840209966, 0.07314305901527407, -0.003470147848129268)
+        }
+
+        over "Link_42R"
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (0, 0, 0)
+            quatd xformOp:orient = (0.4999996013576425, 0.49999958841362685, 0.5000003944721045, 0.5000004157559692)
+            double3 xformOp:translate = (-0.033999776840209966, 0.07734307050704958, -0.003470147848129268)
+        }
+
+        over "Link_43R"
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (0, 0, 0)
+            quatd xformOp:orient = (0.49999956686889463, 0.49999955943766705, 0.5000004234480614, 0.5000004502446135)
+            double3 xformOp:translate = (-0.03399985134601591, 0.11734306216239931, -0.003470147848129268)
+        }
+
+        over "Link_44R"
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (0, 0, 0)
+            quatd xformOp:orient = (0.49999964163432636, 0.4999995489009534, 0.500000349691075, 0.5000004597729797)
+            double3 xformOp:translate = (-0.033999881148338296, 0.13832765221595766, -0.0026658576726913408)
+        }
+
+        over "Link_51R"
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (0, 0, 0)
+            quatd xformOp:orient = (0.7071074988350596, 4.852263983400756e-8, 4.005159659424415e-8, 0.7071060635373043)
+            double3 xformOp:translate = (-0.05599977672100068, 0.06914343833923342, -0.003470162749290462)
+        }
+
+        over "Link_52R"
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (0, 0, 0)
+            quatd xformOp:orient = (0.5000004908426721, 0.5000005696449409, 0.4999994975344818, 0.49999944197677604)
+            double3 xformOp:translate = (-0.05599976181983948, 0.07334344983100893, -0.003470162749290462)
+        }
+
+        over "Link_53R"
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (0, 0, 0)
+            quatd xformOp:orient = (0.5000004842881678, 0.5000005077417571, 0.49999947514396853, 0.4999995328251206)
+            double3 xformOp:translate = (-0.05599967241287229, 0.11334344148635866, -0.003470162749290462)
+        }
+
+        over "Link_54R"
+        {
+            vector3f physics:angularVelocity = (0, 0, 0)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (0, 0, 0)
+            quatd xformOp:orient = (0.5000005030720768, 0.5000005314493601, 0.4999994514363669, 0.4999995140411235)
+            double3 xformOp:translate = (-0.055999642610549905, 0.13432803153991701, -0.0026658576726913408)
+        }
+
+        over "Link_11R"
+        {
+            vector3f physics:angularVelocity = (-2.616677e-14, -5.2928716e-12, 0.000020435677)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (3.0025196e-9, -4.387706e-11, -2.9669288e-17)
+            quatd xformOp:orient = (0.9999999999994181, -5.1039547597355785e-9, -1.646436284186674e-10, -0.0000010787537703062902)
+            double3 xformOp:translate = (8.344650267999576e-8, -3.5762786843029915e-8, 0.014350068867206564)
+        }
+
+        over "Link_12R"
+        {
+            vector3f physics:angularVelocity = (-1.2154628e-7, -5.0782074e-12, 0.000020435677)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (-5.227914e-9, -1.4620096e-9, -3.1116762e-11)
+            quatd xformOp:orient = (0.7071067811860656, 0.7071067811864233, -6.954230212096855e-7, -6.111296791739137e-7)
+            double3 xformOp:translate = (-0.000010526180267339535, -3.5762786843029915e-8, 0.014350068867206564)
+        }
+
+        over "Link_13R"
+        {
+            vector3f physics:angularVelocity = (-1.2149228e-7, 7.735711e-11, -0.00038749864)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (8.293425e-8, 9.245113e-8, -1.0079503e-10)
+            quatd xformOp:orient = (0.8415153137621898, 2.1049758178706463e-7, -6.695545599192893e-8, 0.540233261382224)
+            double3 xformOp:translate = (0.0334894746541977, 0.00599991679191586, 0.014350068867206564)
+        }
+
+        over "Link_14R"
+        {
+            vector3f physics:angularVelocity = (-1.2149228e-7, 7.7358564e-11, -0.00038750484)
+            rel physics:simulationOwner
+            vector3f physics:velocity = (1.8276471e-7, 3.8992627e-7, -1.3203542e-10)
+            quatd xformOp:orient = (0.8415152989457009, 1.9546423426857724e-7, -4.762099783688057e-8, 0.5402332844617103)
+            double3 xformOp:translate = (0.053608031570911416, 0.037052267789840665, 0.014350076317787147)
+        }
+
+        over "joints"
+        {
+            over "Roll_21R"
+            {
+                float drive:angular:physics:targetPosition = -13.1
+                float physics:lowerLimit = -21.999859
+                float physics:upperLimit = 21.999859
+                float state:angular:physics:position = -13.099999
+                float state:angular:physics:velocity = -0.000008732582
+            }
+
+            over "Pitch_22R"
+            {
+                float drive:angular:physics:targetPosition = 47.7
+                float physics:lowerLimit = 0
+                float physics:upperLimit = 89.99999
+                float state:angular:physics:position = 47.699997
+                float state:angular:physics:velocity = 0.000029696093
+            }
+
+            over "Pitch_23R"
+            {
+                float drive:angular:physics:targetPosition = 20.7
+                float physics:lowerLimit = 0
+                float physics:upperLimit = 96.49999
+                float state:angular:physics:position = 20.700003
+                float state:angular:physics:velocity = -0.00003946825
+            }
+
+            over "Pitch_24R"
+            {
+                float physics:lowerLimit = 0
+                float physics:upperLimit = 79.99999
+                float state:angular:physics:position = 5.811934e-13
+                float state:angular:physics:velocity = 6.6880994e-11
+            }
+
+            over "Roll_31R"
+            {
+                float drive:angular:physics:targetPosition = -11.2
+                float physics:lowerLimit = -21.999859
+                float physics:upperLimit = 21.999859
+                float state:angular:physics:position = -11.200004
+                float state:angular:physics:velocity = 0.00003494189
+            }
+
+            over "Pitch_32R"
+            {
+                float drive:angular:physics:targetPosition = 41
+                float physics:lowerLimit = 0
+                float physics:upperLimit = 89.99999
+                float state:angular:physics:position = 40.99999
+                float state:angular:physics:velocity = 0.00007325658
+            }
+
+            over "Pitch_33R"
+            {
+                float physics:lowerLimit = 0
+                float physics:upperLimit = 96.49999
+                float state:angular:physics:position = 7.0727606e-7
+                float state:angular:physics:velocity = -0.000065954366
+            }
+
+            over "Roll_41R"
+            {
+                float physics:lowerLimit = -21.999859
+                float physics:upperLimit = 21.999859
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Roll_51R"
+            {
+                float physics:lowerLimit = -21.999859
+                float physics:upperLimit = 21.999859
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Yaw_11R"
+            {
+                float physics:lowerLimit = -33.000072
+                float physics:upperLimit = 43.999718
+                float state:angular:physics:position = -0.0000020459804
+                float state:angular:physics:velocity = 0.000020435686
+            }
+
+            over "Pitch_42R"
+            {
+                float physics:lowerLimit = 0
+                float physics:upperLimit = 90.000206
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_52R"
+            {
+                float physics:lowerLimit = 0
+                float physics:upperLimit = 90.000206
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Roll_12R"
+            {
+                float physics:lowerLimit = 0
+                float physics:upperLimit = 103.99756
+                float state:angular:physics:position = -7.9902895e-10
+                float state:angular:physics:velocity = 1.21546e-7
+            }
+
+            over "Pitch_43R"
+            {
+                float physics:lowerLimit = 0
+                float physics:upperLimit = 96.49755
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_53R"
+            {
+                float physics:lowerLimit = 0
+                float physics:upperLimit = 96.49755
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_13R"
+            {
+                float drive:angular:physics:targetPosition = 65.4
+                float physics:lowerLimit = 0
+                float physics:upperLimit = 112.001785
+                float state:angular:physics:position = 65.40005
+                float state:angular:physics:velocity = -0.00040793495
+            }
+
+            over "Pitch_34R"
+            {
+                float physics:lowerLimit = 0
+                float physics:upperLimit = 79.99999
+                float state:angular:physics:position = 6.807909e-13
+                float state:angular:physics:velocity = 4.912151e-11
+            }
+
+            over "Pitch_44R"
+            {
+                float physics:lowerLimit = 0
+                float physics:upperLimit = 80.00209
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_54R"
+            {
+                float physics:lowerLimit = 0
+                float physics:upperLimit = 80.00209
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_14R"
+            {
+                float physics:lowerLimit = 0
+                float physics:upperLimit = 93.99945
+                float state:angular:physics:position = -1.4162707e-13
+                float state:angular:physics:velocity = -6.248806e-9
+            }
+        }
+        variantSet "Physics" = {
+            "None" (
+                prepend references = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_base.usd@
+            ) {
+
+            }
+            "PhysX" (
+                prepend payload = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_physics.usd@
+            ) {
+
+            }
+        }
+        variantSet "Sensor" = {
+            "None" {
+
+            }
+            "Sensors" (
+                prepend payload = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_sensor.usd@
+            ) {
+
+            }
+        }
+        variantSet "Robot" = {
+            "None" {
+
+            }
+            "Robot" (
+                prepend payload = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_robot.usd@
+            ) {
+
+            }
+        }
+    }
+
+    def Xform "right_hand" (
+        variants = {
+            string Physics = "PhysX"
+            string Robot = "Robot"
+            string Sensor = "None"
+        }
+        prepend variantSets = ["Physics", "Sensor", "Robot"]
+    )
+    {
+        int physx:collisionFilter = 1
+        int physx:collisionGroup = 1
+        quatd xformOp:orient = (6.123233995736766e-17, 0.7071067811865476, -0.7071067811865475, 4.329780281177466e-17)
+        double3 xformOp:translate = (0.4, 0.15, 0.13)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+        over "joints"
+        {
+            over "Roll_21R"
+            {
+                float drive:angular:physics:targetPosition = 0
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_22R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_23R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_24R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Roll_31R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_32R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_33R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_34R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Roll_41R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_42R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_43R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_44R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Roll_51R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_52R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_53R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_54R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Yaw_11R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Roll_12R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_13R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+
+            over "Pitch_14R"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+        }
+        variantSet "Physics" = {
+            "None" (
+                prepend references = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_base.usd@
+            ) {
+
+            }
+            "PhysX" (
+                prepend payload = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_physics.usd@
+            ) {
+
+            }
+        }
+        variantSet "Sensor" = {
+            "None" {
+
+            }
+            "Sensors" (
+                prepend payload = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_sensor.usd@
+            ) {
+
+            }
+        }
+        variantSet "Robot" = {
+            "None" {
+
+            }
+            "Robot" (
+                prepend payload = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_robot.usd@
+            ) {
+
+            }
+        }
+    }
+
+    def DomeLight "DomeLight"
+    {
+        color3f color = (1, 1, 1)
+        float intensity = 1500
+    }
+
+    def DistantLight "OverheadLight"
+    {
+        color3f color = (1, 0.98, 0.95)
+        float intensity = 3000
+        float3 xformOp:rotateXYZ = (-45, 45, 0)
+        uniform token[] xformOpOrder = ["xformOp:rotateXYZ"]
+    }
+}
+

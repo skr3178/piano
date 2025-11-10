@@ -1,0 +1,183 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    endTimeCode = 100
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    upAxis = "Z"
+)
+
+def PhysicsScene "PhysicsScene"
+{
+    vector3f physics:gravityDirection = (0, 0, -1)
+    float physics:gravityMagnitude = 9.81
+}
+
+def "PhysicsMaterials"
+{
+    def Material "PianoMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 0.5
+        float physics:restitution = 0.1
+        float physics:staticFriction = 0.6
+    }
+    
+    def Material "HandMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 1.0
+        float physics:restitution = 0.0
+        float physics:staticFriction = 1.0
+    }
+}
+
+def Xform "World"
+{
+    # Piano - reference the working piano model
+    def Xform "Piano" (
+        prepend references = @./piano_with_physics.usda@</Piano>
+    )
+    {
+        # Piano collision group 0, filter 2 (collide with group 1 only)
+        int physx:collisionGroup = 0
+        int physx:collisionFilter = 2
+    }
+    
+    # Left Hand - Dex5 hand, positioned using MuJoCo template coordinates
+    # MuJoCo position: (0.4, -0.15, 0.13) - keys are at x=0, so use MuJoCo position directly
+    def Xform "left_hand" (
+        variants = {
+            string Physics = "PhysX"
+            string Robot = "Robot"
+            string Sensor = "None"
+        }
+        prepend variantSets = ["Physics", "Sensor", "Robot"]
+    )
+    {
+        # Position: Z=0.08, X moved negative by same amount (0.2 - 0.03 = 0.17)
+        double3 xformOp:translate = (0.17, -0.15, 0.08)
+        
+        # Orientation from piano_with_dex5.usda (correct orientation)
+        # Combined rotation quaternion (USD format: x, y, z, w)
+        quatd xformOp:orient = (6.123233995736766e-17, 0.7071067811865476, -0.7071067811865475, 4.329780281177466e-17)
+        
+        # Mirror left hand in X-axis (scale -1, 1, 1) to create left hand from right hand model
+        double3 xformOp:scale = (-1.0, 1.0, 1.0)
+        
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        
+        # Collision group 1, filter 1 (collide with group 0 only)
+        int physx:collisionGroup = 1
+        int physx:collisionFilter = 1
+        
+        variantSet "Physics" = {
+            "None" (
+                prepend references = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_base.usd@
+            ) {
+            }
+            "PhysX" (
+                prepend payload = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_physics.usd@
+            ) {
+            }
+        }
+        variantSet "Sensor" = {
+            "None" {
+            }
+            "Sensors" (
+                prepend payload = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_sensor.usd@
+            ) {
+            }
+        }
+        variantSet "Robot" = {
+            "None" {
+            }
+            "Robot" (
+                prepend payload = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_robot.usd@
+            ) {
+            }
+        }
+    }
+    
+    # Right Hand - Dex5 hand, positioned using MuJoCo template coordinates
+    # MuJoCo position: (0.4, 0.15, 0.13) - keys are at x=0, so use MuJoCo position directly
+    def Xform "right_hand" (
+        variants = {
+            string Physics = "PhysX"
+            string Robot = "Robot"
+            string Sensor = "None"
+        }
+        prepend variantSets = ["Physics", "Sensor", "Robot"]
+    )
+    {
+        # Position: Z=0.08, X moved negative by same amount (0.2 - 0.03 = 0.17)
+        double3 xformOp:translate = (0.17, 0.15, 0.08)
+        
+        # Orientation from piano_with_dex5.usda (correct orientation)
+        # Combined rotation quaternion (USD format: x, y, z, w)
+        quatd xformOp:orient = (6.123233995736766e-17, 0.7071067811865476, -0.7071067811865475, 4.329780281177466e-17)
+        
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+        
+        # Collision group 1, filter 1 (collide with group 0 only)
+        int physx:collisionGroup = 1
+        int physx:collisionFilter = 1
+        
+        variantSet "Physics" = {
+            "None" (
+                prepend references = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_base.usd@
+            ) {
+            }
+            "PhysX" (
+                prepend payload = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_physics.usd@
+            ) {
+            }
+        }
+        variantSet "Sensor" = {
+            "None" {
+            }
+            "Sensors" (
+                prepend payload = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_sensor.usd@
+            ) {
+            }
+        }
+        variantSet "Robot" = {
+            "None" {
+            }
+            "Robot" (
+                prepend payload = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_robot.usd@
+            ) {
+            }
+        }
+    }
+    
+    # Lighting Configuration
+    # 1. DomeLight (Ambient Illumination)
+    # Path: /World/DomeLight
+    # Type: UsdLux.DomeLight
+    # Intensity: 1500.0
+    # Color: (1.0, 1.0, 1.0) - Pure white
+    def DomeLight "DomeLight"
+    {
+        float intensity = 1500.0
+        color3f color = (1.0, 1.0, 1.0)
+    }
+    
+    # 2. DistantLight (Directional/Overhead Light)
+    # Path: /World/OverheadLight
+    # Type: UsdLux.DistantLight
+    # Intensity: 3000.0
+    # Color: (1.0, 0.98, 0.95) - Warm white
+    # Rotation: (-45, 45, 0) degrees (XYZ)
+    def DistantLight "OverheadLight"
+    {
+        float intensity = 3000.0
+        color3f color = (1.0, 0.98, 0.95)
+        float3 xformOp:rotateXYZ = (-45, 45, 0)
+        uniform token[] xformOpOrder = ["xformOp:rotateXYZ"]
+    }
+}
+
