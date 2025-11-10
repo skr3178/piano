@@ -1,0 +1,89 @@
+#usda 1.0
+(
+    customLayerData = {
+        dictionary cameraSettings = {
+            dictionary Front = {
+                double3 position = (50000.000000000015, -1.1102230246251565e-11, 0)
+                double radius = 500
+            }
+            dictionary Perspective = {
+                double3 position = (1.5754265890611014, 1.5754265890611014, 1.575426551458457)
+                double3 target = (0, 0, -2.220446049250313e-16)
+            }
+            dictionary Right = {
+                double3 position = (0, -50000, -1.1102230246251565e-11)
+                double radius = 500
+            }
+            dictionary Top = {
+                double3 position = (0, 0, 50000)
+                double radius = 500
+            }
+            string boundCamera = "/OmniverseKit_Persp"
+        }
+        dictionary omni_layer = {
+            string authoring_layer = "./cortex_franka_blocks_belief.usd"
+            dictionary locked = {
+            }
+            dictionary muteness = {
+            }
+        }
+        dictionary renderSettings = {
+        }
+    }
+    defaultPrim = "cortex"
+    endTimeCode = 100
+    metersPerUnit = 1
+    startTimeCode = 0
+    timeCodesPerSecond = 60
+    upAxis = "Z"
+)
+
+def Xform "cortex"
+{
+    def "belief" (
+        instanceable = false
+        prepend references = @https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5/Isaac/Samples/Cortex/Franka/BlocksWorld/cortex_franka_blocks.usd@
+    )
+    {
+        float3 xformOp:rotateXYZ = (0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+
+    def "floor" (
+        instanceable = false
+        prepend references = @https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5/Isaac/Environments/Grid/default_environment.usd@
+    )
+    {
+        token visibility = "inherited"
+
+        over "Enviroment" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            over "Geometry" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+            }
+        }
+
+        over "SphereLight"
+        {
+            custom float inputs:intensity = 30000
+            custom float inputs:radius = 50
+            custom float inputs:shaping:cone:angle = 180
+            custom float inputs:shaping:cone:softness = 0
+            custom float inputs:shaping:focus = 0
+            custom color3f inputs:shaping:focusTint = (0, 0, 0)
+        }
+    }
+
+    def Xform "default_environment" (
+        prepend references = @https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5/Isaac/Environments/Grid/default_environment.usd@
+    )
+    {
+    }
+}
+

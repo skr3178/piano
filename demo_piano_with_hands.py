@@ -60,6 +60,19 @@ def main():
     print(f"📁 Loading scene: {piano_hands_usd_path.name}")
     add_reference_to_stage(str(piano_hands_usd_path), "/World")
     
+    # CRITICAL: Configure collision groups BEFORE creating articulations
+    # This ensures piano keys and hand fingers have proper collision groups set
+    print("\n🔧 Configuring collision groups...")
+    try:
+        from configure_collisions import configure_collisions
+        collision_count = configure_collisions(stage, load_payloads=True)
+        print(f"  ✓ Configured {collision_count} collision prims")
+    except Exception as e:
+        print(f"  ⚠️  Warning: Could not configure collisions: {e}")
+        print("  ⚠️  Fingers may pass through piano keys!")
+        import traceback
+        traceback.print_exc()
+    
     # Add bright lighting for clear visibility
     from pxr import UsdLux
     

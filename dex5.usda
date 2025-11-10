@@ -1,0 +1,410 @@
+#usda 1.0
+(
+    customLayerData = {
+        dictionary cameraSettings = {
+            dictionary Front = {
+                double3 position = (5, 0, 0)
+                double radius = 5
+            }
+            dictionary Perspective = {
+                double3 position = (0.4103208831820985, 0.4465928694399347, 0.3712164866156787)
+                double3 target = (0.029493723194018606, 0.065765709451855, -0.009610664282730774)
+            }
+            dictionary Right = {
+                double3 position = (0, -5, 0)
+                double radius = 5
+            }
+            dictionary Top = {
+                double3 position = (0, 0, 5)
+                double radius = 5
+            }
+            string boundCamera = "/OmniverseKit_Persp"
+        }
+        dictionary omni_layer = {
+            string authoring_layer = "./Dex5-URDF-R.usd"
+            dictionary locked = {
+            }
+            dictionary muteness = {
+            }
+        }
+        dictionary renderSettings = {
+        }
+    }
+    defaultPrim = "Dex5_URDF_R"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "Dex5_URDF_R" (
+    variants = {
+        string Physics = "PhysX"
+        string Robot = "Robot"
+        string Sensor = "Sensors"
+    }
+    prepend variantSets = ["Physics", "Sensor", "Robot"]
+)
+{
+    over "Link_54R"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.5000000558793578, 0.49999998137354545, 0.4999999515712226, 0.5000000111758686)
+        double3 xformOp:translate = (-0.0560000017285347, 0.1343279778957367, -0.002665925770998001)
+    }
+
+    over "Link_53R"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.500000033527618, 0.49999995902180266, 0.49999998882412644, 0.5000000186264498)
+        double3 xformOp:translate = (-0.0559999980032444, 0.11334337294101715, -0.0034702299162745476)
+    }
+
+    over "Link_44R"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.49999913945609337, 0.499999094754058, 0.500000823288718, 0.5000009424980048)
+        double3 xformOp:translate = (-0.034000229090452194, 0.13832759857177734, -0.002665909007191658)
+    }
+
+    over "Link_43R"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.4999991692581405, 0.49999906495175594, 0.5000008530911658, 0.5000009126958128)
+        double3 xformOp:translate = (-0.034000150859355927, 0.11734301596879959, -0.0034702131524682045)
+    }
+
+    over "Link_34R"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.49999913945609337, 0.499999094754058, 0.500000823288718, 0.5000009424980048)
+        double3 xformOp:translate = (-0.01200022641569376, 0.14232760667800903, -0.0026659034192562103)
+    }
+
+    over "Link_12R"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.7071067932881576, 0.707106769084929, 3.8184225559234546e-8, 1.0118674254044872e-7)
+        double3 xformOp:translate = (-0.000010614283382892609, 6.51925802230835e-9, 0.01434999331831932)
+    }
+
+    over "Link_33R"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.4999991692581405, 0.49999906495175594, 0.5000008530911658, 0.5000009126958128)
+        double3 xformOp:translate = (-0.012000150978565216, 0.12134302407503128, -0.003470207564532757)
+    }
+
+    over "base_link_R"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (1.6763806343078613e-8, -2.0489096641540527e-8, 1.30385160446167e-8)
+    }
+
+    over "Link_41R"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.7071054819836575, -1.4901161193846283e-8, -6.868503987788525e-9, 0.7071080803870503)
+        double3 xformOp:translate = (-0.03399999439716339, 0.07314300537109375, -0.0034702112898230553)
+    }
+
+    over "Link_22R"
+    {
+        vector3f physics:angularVelocity = (-4.1890869e-10, 2.371063e-11, 0.000006550581)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (-2.904146e-9, 1.6398317e-10, -1.5565372e-13)
+        quatd xformOp:orient = (0.5133406614340982, 0.5133408808143733, 0.4862933366020426, 0.4862934260090082)
+        double3 xformOp:translate = (0.01022711768746376, 0.0773368552327156, -0.003470206167548895)
+    }
+
+    over "Link_31R"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.7071054819836575, -1.4901161193846283e-8, -6.868503987788525e-9, 0.7071080803870503)
+        double3 xformOp:translate = (-0.011999992653727531, 0.07714301347732544, -0.0034702057018876076)
+    }
+
+    over "Link_11R"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.9999999999999999, -8.422090929854497e-9, 1.0631847460954934e-8, -6.1706408792993345e-9)
+        double3 xformOp:translate = (-7.450580596923828e-9, 7.188646122813225e-9, 0.014349992386996746)
+    }
+
+    over "Link_14R"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.9999999999708504, 9.860380415826623e-8, -5.951734932221231e-8, -0.000007634518862690824)
+        double3 xformOp:translate = (0.07009828835725784, 0.0006340506952255964, 0.014350000768899918)
+    }
+
+    over "Link_52R"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.5000000372528979, 0.5000000670552239, 0.4999999776482553, 0.4999999180436097)
+        double3 xformOp:translate = (-0.0560000017285347, 0.07334336638450623, -0.003470230847597122)
+    }
+
+    over "Link_13R"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.9999999999708837, 1.0020479730389748e-7, -8.106896976183748e-8, -0.000007629935565200422)
+        double3 xformOp:translate = (0.03348936885595322, 0.006000011693686247, 0.01434999518096447)
+    }
+
+    over "Link_24R"
+    {
+        vector3f physics:angularVelocity = (-2.2071318e-9, 1.2054996e-10, 0.000006550581)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (-8.509032e-9, 4.688861e-10, -1.4634499e-12)
+        quatd xformOp:orient = (0.5133405857953411, 0.513340925952824, 0.48629335270038493, 0.48629344210734776)
+        double3 xformOp:translate = (0.013524854555726051, 0.13823221623897552, -0.002665895503014326)
+    }
+
+    over "Link_32R"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.4999991357306465, 0.4999990761276053, 0.500000834464626, 0.5000009536739161)
+        double3 xformOp:translate = (-0.0120000084862113, 0.08134301006793976, -0.0034702070988714695)
+    }
+
+    over "Link_21R"
+    {
+        vector3f physics:angularVelocity = (1.0708317e-12, 9.670514e-13, 0.000006550581)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (-8.9339985e-10, 4.8953758e-11, -3.2599092e-17)
+        quatd xformOp:orient = (0.7259735502261314, 5.960464463090921e-8, -3.603054201809843e-8, 0.6877226216811992)
+        double3 xformOp:translate = (0.010000004433095455, 0.07314299792051315, -0.003470206167548895)
+    }
+
+    over "Link_51R"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.7071067336835228, 1.4901161193847522e-8, 1.5425030142068717e-8, 0.7071068286895689)
+        double3 xformOp:translate = (-0.0560000017285347, 0.0691433697938919, -0.0034702299162745476)
+    }
+
+    over "Link_42R"
+    {
+        vector3f physics:angularVelocity = (0, 0, 0)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (0, 0, 0)
+        quatd xformOp:orient = (0.4999991357306465, 0.4999990761276053, 0.500000834464626, 0.5000009536739161)
+        double3 xformOp:translate = (-0.034000009298324585, 0.07734300196170807, -0.003470212686806917)
+    }
+
+    over "Link_23R"
+    {
+        vector3f physics:angularVelocity = (-2.2071172e-9, 1.2054927e-10, 0.000006550581)
+        rel physics:simulationOwner
+        vector3f physics:velocity = (-6.346616e-9, 3.4358644e-10, -7.3254694e-13)
+        quatd xformOp:orient = (0.5133407551535831, 0.5133407909288562, 0.48629336438077186, 0.4862933941830952)
+        double3 xformOp:translate = (0.012390115298330784, 0.1172783374786377, -0.0034702024422585964)
+    }
+
+    over "joints"
+    {
+        over "Roll_21R"
+        {
+            float drive:angular:physics:targetPosition = -3.1000001
+            float physics:lowerLimit = -21.999859
+            float physics:upperLimit = 21.999859
+            float state:angular:physics:position = -3.1000006
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Pitch_22R"
+        {
+            float drive:angular:physics:targetPosition = 0
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 89.99999
+            float state:angular:physics:position = 2.7198836e-12
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Pitch_23R"
+        {
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 96.49999
+            float state:angular:physics:position = 1.5855331e-11
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Pitch_24R"
+        {
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 79.99999
+            float state:angular:physics:position = 1.1886826e-16
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Roll_31R"
+        {
+            float physics:lowerLimit = -21.999859
+            float physics:upperLimit = 21.999859
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Pitch_32R"
+        {
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 89.99999
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Roll_41R"
+        {
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Roll_51R"
+        {
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Yaw_11R"
+        {
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Pitch_42R"
+        {
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Pitch_52R"
+        {
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Roll_12R"
+        {
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Pitch_33R"
+        {
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Pitch_43R"
+        {
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Pitch_53R"
+        {
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Pitch_13R"
+        {
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Pitch_34R"
+        {
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Pitch_44R"
+        {
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Pitch_54R"
+        {
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+
+        over "Pitch_14R"
+        {
+            float state:angular:physics:position = 0
+            float state:angular:physics:velocity = 0
+        }
+    }
+    variantSet "Physics" = {
+        "None" (
+            prepend references = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_base.usd@
+        ) {
+            over "joints" (
+                active = false
+            )
+            {
+            }
+
+        }
+        "PhysX" (
+            prepend payload = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_physics.usd@
+        ) {
+
+        }
+    }
+    variantSet "Sensor" = {
+        "None" {
+
+        }
+        "Sensors" (
+            prepend payload = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_sensor.usd@
+        ) {
+
+        }
+    }
+    variantSet "Robot" = {
+        "None" {
+
+        }
+        "Robot" (
+            prepend payload = @./nvidia_assets/Assets/Isaac/5.1/Isaac/Robots/Unitree/Dex5/configuration/Dex5-URDF-R_robot.usd@
+        ) {
+
+        }
+    }
+}
+

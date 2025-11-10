@@ -19,9 +19,22 @@ exports.zip.local
 convert/
 exports/
 recordings/
+nvidia_assets/
+
+# Large zip files
+*.zip
+isaac-sim-assets-robots_and_sensors-*.zip
 
 # Log files
 test_output.log
+*.log
+test_run*.log
+
+# Large binary files
+*.npy
+
+# Embedded git repositories
+unitree_sim_isaaclab/
 
 # Thumbnails
 .thumbs/

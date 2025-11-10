@@ -43,12 +43,912 @@ def Xform "World"
     )
     {
         # Piano collision group 0, filter 2 (collide with group 1 only)
+        # NOTE: Collision groups on parent Xforms don't automatically propagate to
+        # collision prims in PhysX. You must set collision groups on each collision prim.
+        # See configure_collisions.py for a script to do this programmatically.
         int physx:collisionGroup = 0
         int physx:collisionFilter = 2
+        
+        # Override collision groups on Base collision prim
+        over "Base"
+        {
+            over "BaseCollision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        
+        # Override collision groups on ALL piano key collision prims
+        # This ensures piano keys (group 0) collide with hands (group 1) but not with each other
+        # 52 white keys + 36 black keys = 88 total keys
+        over "white_key_0"
+        {
+            over "white_key_0_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_2"
+        {
+            over "white_key_2_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_3"
+        {
+            over "white_key_3_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_5"
+        {
+            over "white_key_5_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_7"
+        {
+            over "white_key_7_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_8"
+        {
+            over "white_key_8_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_10"
+        {
+            over "white_key_10_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_12"
+        {
+            over "white_key_12_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_14"
+        {
+            over "white_key_14_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_15"
+        {
+            over "white_key_15_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_17"
+        {
+            over "white_key_17_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_19"
+        {
+            over "white_key_19_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_20"
+        {
+            over "white_key_20_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_22"
+        {
+            over "white_key_22_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_24"
+        {
+            over "white_key_24_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_26"
+        {
+            over "white_key_26_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_27"
+        {
+            over "white_key_27_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_29"
+        {
+            over "white_key_29_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_31"
+        {
+            over "white_key_31_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_32"
+        {
+            over "white_key_32_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_34"
+        {
+            over "white_key_34_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_36"
+        {
+            over "white_key_36_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_38"
+        {
+            over "white_key_38_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_39"
+        {
+            over "white_key_39_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_41"
+        {
+            over "white_key_41_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_43"
+        {
+            over "white_key_43_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_44"
+        {
+            over "white_key_44_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_46"
+        {
+            over "white_key_46_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_48"
+        {
+            over "white_key_48_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_50"
+        {
+            over "white_key_50_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_51"
+        {
+            over "white_key_51_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_53"
+        {
+            over "white_key_53_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_55"
+        {
+            over "white_key_55_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_56"
+        {
+            over "white_key_56_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_58"
+        {
+            over "white_key_58_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_60"
+        {
+            over "white_key_60_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_62"
+        {
+            over "white_key_62_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_63"
+        {
+            over "white_key_63_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_65"
+        {
+            over "white_key_65_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_67"
+        {
+            over "white_key_67_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_68"
+        {
+            over "white_key_68_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_70"
+        {
+            over "white_key_70_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_72"
+        {
+            over "white_key_72_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_74"
+        {
+            over "white_key_74_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_75"
+        {
+            over "white_key_75_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_77"
+        {
+            over "white_key_77_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_79"
+        {
+            over "white_key_79_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_80"
+        {
+            over "white_key_80_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_82"
+        {
+            over "white_key_82_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_84"
+        {
+            over "white_key_84_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_86"
+        {
+            over "white_key_86_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "white_key_87"
+        {
+            over "white_key_87_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_1"
+        {
+            over "black_key_1_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_4"
+        {
+            over "black_key_4_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_6"
+        {
+            over "black_key_6_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_9"
+        {
+            over "black_key_9_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_11"
+        {
+            over "black_key_11_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_13"
+        {
+            over "black_key_13_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_16"
+        {
+            over "black_key_16_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_18"
+        {
+            over "black_key_18_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_21"
+        {
+            over "black_key_21_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_23"
+        {
+            over "black_key_23_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_25"
+        {
+            over "black_key_25_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_28"
+        {
+            over "black_key_28_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_30"
+        {
+            over "black_key_30_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_33"
+        {
+            over "black_key_33_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_35"
+        {
+            over "black_key_35_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_37"
+        {
+            over "black_key_37_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_40"
+        {
+            over "black_key_40_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_42"
+        {
+            over "black_key_42_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_45"
+        {
+            over "black_key_45_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_47"
+        {
+            over "black_key_47_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_49"
+        {
+            over "black_key_49_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_52"
+        {
+            over "black_key_52_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_54"
+        {
+            over "black_key_54_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_57"
+        {
+            over "black_key_57_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_59"
+        {
+            over "black_key_59_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_61"
+        {
+            over "black_key_61_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_64"
+        {
+            over "black_key_64_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_66"
+        {
+            over "black_key_66_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_69"
+        {
+            over "black_key_69_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_71"
+        {
+            over "black_key_71_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_73"
+        {
+            over "black_key_73_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_76"
+        {
+            over "black_key_76_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_78"
+        {
+            over "black_key_78_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_81"
+        {
+            over "black_key_81_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_83"
+        {
+            over "black_key_83_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
+        over "black_key_85"
+        {
+            over "black_key_85_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                int physx:collisionGroup = 0
+                int physx:collisionFilter = 2
+            }
+        }
     }
     
     # Left Hand - Dex5 hand, positioned using MuJoCo template coordinates
     # MuJoCo position: (0.4, -0.15, 0.13) - keys are at x=0, so use MuJoCo position directly
+    # Collision groups are set on all collision prims via overrides below
     def Xform "left_hand" (
         variants = {
             string Physics = "PhysX"
@@ -58,8 +958,8 @@ def Xform "World"
         prepend variantSets = ["Physics", "Sensor", "Robot"]
     )
     {
-        # Position: Z=0.08, X moved negative by same amount (0.2 - 0.03 = 0.17)
-        double3 xformOp:translate = (0.17, -0.15, 0.08)
+        # Position: Moved forward (negative X) and down (negative Z) for better key reach
+        double3 xformOp:translate = (0.13, -0.15, 0.06)
         
         # Orientation from piano_with_dex5.usda (correct orientation)
         # Combined rotation quaternion (USD format: x, y, z, w)
@@ -71,8 +971,288 @@ def Xform "World"
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         
         # Collision group 1, filter 1 (collide with group 0 only)
+        # Collision prims in payload files are overridden below
         int physx:collisionGroup = 1
         int physx:collisionFilter = 1
+        
+        # Override collision groups on all hand collision prims in payload files
+        # Collision prims are at /colliders/{LinkName}/{LinkName}/mesh
+        over "colliders"
+        {
+            over "base_link_R"
+            {
+                over "base_link_R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_11R"
+            {
+                over "Link_11R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_12R"
+            {
+                over "Link_12R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_13R"
+            {
+                over "Link_13R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_14R"
+            {
+                over "Link_14R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_21R"
+            {
+                over "Link_21R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_22R"
+            {
+                over "Link_22R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_23R"
+            {
+                over "Link_23R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_24R"
+            {
+                over "Link_24R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_31R"
+            {
+                over "Link_31R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_32R"
+            {
+                over "Link_32R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_33R"
+            {
+                over "Link_33R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_34R"
+            {
+                over "Link_34R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_41R"
+            {
+                over "Link_41R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_42R"
+            {
+                over "Link_42R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_43R"
+            {
+                over "Link_43R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_44R"
+            {
+                over "Link_44R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_51R"
+            {
+                over "Link_51R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_52R"
+            {
+                over "Link_52R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_53R"
+            {
+                over "Link_53R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_54R"
+            {
+                over "Link_54R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+        }
         
         variantSet "Physics" = {
             "None" (
@@ -104,6 +1284,7 @@ def Xform "World"
     
     # Right Hand - Dex5 hand, positioned using MuJoCo template coordinates
     # MuJoCo position: (0.4, 0.15, 0.13) - keys are at x=0, so use MuJoCo position directly
+    # Collision groups are set on all collision prims via overrides below
     def Xform "right_hand" (
         variants = {
             string Physics = "PhysX"
@@ -113,8 +1294,8 @@ def Xform "World"
         prepend variantSets = ["Physics", "Sensor", "Robot"]
     )
     {
-        # Position: Z=0.08, X moved negative by same amount (0.2 - 0.03 = 0.17)
-        double3 xformOp:translate = (0.17, 0.15, 0.08)
+        # Position: Moved forward (negative X) and down (negative Z) for better key reach
+        double3 xformOp:translate = (0.13, 0.15, 0.06)
         
         # Orientation from piano_with_dex5.usda (correct orientation)
         # Combined rotation quaternion (USD format: x, y, z, w)
@@ -123,8 +1304,288 @@ def Xform "World"
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
         
         # Collision group 1, filter 1 (collide with group 0 only)
+        # Collision prims in payload files are overridden below
         int physx:collisionGroup = 1
         int physx:collisionFilter = 1
+        
+        # Override collision groups on all hand collision prims in payload files
+        # Collision prims are at /colliders/{LinkName}/{LinkName}/mesh
+        over "colliders"
+        {
+            over "base_link_R"
+            {
+                over "base_link_R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_11R"
+            {
+                over "Link_11R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_12R"
+            {
+                over "Link_12R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_13R"
+            {
+                over "Link_13R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_14R"
+            {
+                over "Link_14R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_21R"
+            {
+                over "Link_21R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_22R"
+            {
+                over "Link_22R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_23R"
+            {
+                over "Link_23R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_24R"
+            {
+                over "Link_24R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_31R"
+            {
+                over "Link_31R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_32R"
+            {
+                over "Link_32R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_33R"
+            {
+                over "Link_33R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_34R"
+            {
+                over "Link_34R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_41R"
+            {
+                over "Link_41R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_42R"
+            {
+                over "Link_42R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_43R"
+            {
+                over "Link_43R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_44R"
+            {
+                over "Link_44R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_51R"
+            {
+                over "Link_51R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_52R"
+            {
+                over "Link_52R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_53R"
+            {
+                over "Link_53R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+            over "Link_54R"
+            {
+                over "Link_54R"
+                {
+                    over "mesh" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                    )
+                    {
+                        int physx:collisionGroup = 1
+                        int physx:collisionFilter = 1
+                    }
+                }
+            }
+        }
         
         variantSet "Physics" = {
             "None" (

@@ -1,0 +1,27 @@
+======================================================================
+Key Activation History
+======================================================================
+
+Total unique keys activated: 6
+Activation threshold: 1.31mm (0.5° / 0.008727 rad) - MuJoCo standard
+
+Total activation events: 17
+
+Activated Keys:
+----------------------------------------------------------------------
+Key 27: first at  1.28s, max displacement: -58.73mm, duration:  0.00s, 1 events
+Key 29: first at  1.57s, max displacement: -58.96mm, duration:  0.07s, 5 events
+Key 31: first at  1.62s, max displacement: -65.09mm, duration:  0.02s, 2 events
+Key 32: first at  1.43s, max displacement: -60.90mm, duration:  0.30s, 7 events
+Key 59: first at  2.30s, max displacement: -86.33mm, duration:  0.00s, 1 events
+Key 61: first at  1.72s, max displacement: -88.65mm, duration:  0.00s, 1 events
+
+Overall Statistics:
+----------------------------------------------------------------------
+Average max displacement: -69.78mm
+Maximum displacement: -58.73mm
+Minimum displacement: -88.65mm
+Average activation duration: 0.06s
+Total activation time: 0.38s
+
+All Activated Key IDs: [27, 29, 31, 32, 59, 61]

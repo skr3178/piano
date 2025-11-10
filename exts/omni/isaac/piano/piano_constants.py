@@ -57,9 +57,10 @@ WHITE_KEY_SPRINGREF = 0.0  # Changed from -1° to 0° to match rest position
 BLACK_KEY_SPRINGREF = 0.0  # Changed from -1° to 0° to match rest position
 # Joint spring stiffness, in Nm/rad.
 # The spring should be stiff enough to support the weight of the key at equilibrium.
-# Increased from 2 to 10 for faster key return in PhysX
-WHITE_KEY_STIFFNESS = 10
-BLACK_KEY_STIFFNESS = 10
+# Reduced from 10 to 1.5 to make keys much easier to press with robotic hands
+# Original MuJoCo value was 2, but 1.5 is softer and easier for robotic manipulation
+WHITE_KEY_STIFFNESS = 1.5
+BLACK_KEY_STIFFNESS = 1.5
 # Joint damping and armature for smoothing key motion.
 WHITE_JOINT_DAMPING = 0.05
 BLACK_JOINT_DAMPING = 0.05
