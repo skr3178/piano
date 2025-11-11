@@ -14,12 +14,14 @@ __MACOSX/
 allegroHand.usda
 exports.zip
 exports.zip.local
+scene_state_step_*.usda
 
 # Large directories
 convert/
 exports/
 recordings/
 nvidia_assets/
+IsaacLab/
 
 # Large zip files
 *.zip
